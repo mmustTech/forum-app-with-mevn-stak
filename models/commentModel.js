@@ -46,6 +46,7 @@ commentSchema.pre(/^find/, function(next) {
     this
         .populate({
             path: 'replies',
+            options: { sort: {createdAt: -1} },
             select: '-__v'
         })
         .populate({

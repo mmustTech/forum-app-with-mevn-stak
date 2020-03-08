@@ -72,6 +72,7 @@ topicScheme.pre(/^find/, function(next) {
     this.populate({
         path: 'comments',
         match: { parent: { $ne: false } },
+        options: { sort: {createdAt: -1} },
         select: '-__v'
     }).populate({
         path: 'userId',
