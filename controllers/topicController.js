@@ -16,7 +16,7 @@ exports.getTopicWithIncViews = catchAsync(async (req, res, next) => {
 
   await Topic.findByIdAndUpdate(
     doc.id,
-    { $inc: { views: 1} } // }, 
+    { $inc: { views: 1} }
   )
 
   res.status(200).json({
